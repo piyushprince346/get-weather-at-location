@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Get Weather</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">GetWeather</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                   
+                    
+                </ul>
+                
+            </div>
+        </nav>
+
+        
+
+        <div style="margin-top: 100px; margin-left: 500px; margin-right: 400px">
+            <div class="jumbotron">
+                <h2 style="color: rgba(185, 59, 59, 0.808);">Welcome to GetWeather</h2>
+                <h6 style="color: rgb(143, 179, 89);">Get the weather of your city by just entering your city name</h6>
+                <form>
+                    <div class="form-group">
+                        <label for="city">Enter your city name</label>
+                        <input type="text" name="city" class="form-control" id="city" placeholder="Enter your city name here" aria-describedby="cityhelp">
+                        <small id="cityhelp" class="form-text text-muted"></small>
+                    </div>
+                    
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <div style="color: rgb(0, 0, 0);">
+                    {% if a %}
+                        {% if weather %}
+                        <h3>Location: {{weather.location}} </h3>
+                        <h3>Date and Time: {{weather.time}} </h3>
+                        <h3>Weather Condition: {{weather.weather_condition}} </h3>
+                        <h3>Temperature: {{weather.temperature}} <sup>o</sup>C </h3>
+                        <h3>Precipitation: {{weather.precipitation}} </h3>
+                        <h3>Humidity: {{weather.humidity}} </h3>
+                        <h3>Wind speed: {{weather.wind}} </h3>
+                        {% endif %}
+                    {% else %}
+                        <h2>City not found....!</h2>
+                    {% endif %}
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </body>
+</html>
